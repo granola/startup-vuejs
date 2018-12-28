@@ -19,7 +19,7 @@
       </thead>
       <tbody>
         <tr v-for="item in todos" v-bind:key="item.id">
-          <th>{{ itme.id }}</th>
+          <th>{{ item.id }}</th>
           <td>{{ item.comment }}</td>
           <td class="state">
             <button>{{ item.state }}</button>
@@ -31,6 +31,11 @@
         </tr>
       </tbody>
     </table>
+    <h2>新しい作業の追加</h2>
+    <form class="add-form" v-on:submit.prevent="doAdd">
+      コメント
+      <input type="text" ref="comment">
+    </form>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
   <script src="main.js"></script>
