@@ -11,6 +11,7 @@
       <input type="radio" v-model="current" v-bind:value="option.value">
       {{ option.label }}
     </label>
+    ({{ computedTodos.length }} 件を表示中）
 
     <table>
       <!-- テーブルヘッダー -->
@@ -27,7 +28,7 @@
           <th>{{ item.id }}</th>
           <td>{{ item.comment }}</td>
           <td class="state">
-            <button v-on:click="doChangeState(item)">{{ item.state }}</button>
+            <button v-on:click="doChangeState(item)">{{ labels[item.state] }}</button>
           </td>
           <td class="button" v-on:click="doRemove(item)">
             <!-- 削除ボタンのモック -->
