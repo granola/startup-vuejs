@@ -6,7 +6,12 @@
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
-  <div id="app">
+  <div id="app">    <!-- ★STEP11 -->
+    <label v-for="option in options" >
+      <input type="radio" v-model="current" v-bind:value="option.value">
+      {{ option.label }}
+    </label>
+
     <table>
       <!-- テーブルヘッダー -->
       <thead>
