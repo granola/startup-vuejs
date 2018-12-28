@@ -67,4 +67,12 @@ const app = new Vue({
       deep: true
     }
   },
+
+  computed: {
+    computedTodos: function() {
+      return this.todos.filter(function(el) {
+        return this.current < 0 ? true : this.current === el.state;
+      }, this)
+    }
+  }
 });
