@@ -29,6 +29,10 @@ const app = new Vue({
     current: -1
   },
 
+  created() {
+    this.todos = todoStorage.fetch()
+  },
+
   methods: {
     doAdd: function(event, value) {
       var comment = this.$refs.comment
@@ -63,8 +67,4 @@ const app = new Vue({
       deep: true
     }
   },
-
-  created() {
-    this.todos = todoStorage.fetch()
-  }
-})
+});
