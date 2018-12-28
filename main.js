@@ -29,7 +29,7 @@ const app = new Vue({
     current: -1
   },
 
-  created() {
+  created: {
     this.todos = todoStorage.fetch()
   },
 
