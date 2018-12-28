@@ -19,6 +19,7 @@ var todoStorage = {
 const app = new Vue({
   el: '#app',
   data: {
+    todos: []
   },
   methods: {
   }
